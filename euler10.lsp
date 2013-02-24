@@ -1,13 +1,11 @@
 (define (prime? n)
-	(and 
+	(and
 		(= (length (factor n)) 1)))
 
 (set 'primes '())
-(while (< $idx 130000)
+(while (< $idx 2000000)
 	(if (prime? $idx)
 		(push $idx primes)))
 
-(println (length primes))
-(println ((reverse (copy primes)) 10000))
-
+(println (apply + primes))
 (exit)

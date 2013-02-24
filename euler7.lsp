@@ -1,15 +1,13 @@
-(define (sieve n)
-	(set 'l (sequence 2 n))
-	(set 'result '())
-	(while (set 'f (pop l))
-		;(println "factor: " temp)
-		(push f result)
-		(set 'np (map (fn (x) (* x (first result))) (sequence 2 (+ 1 (div n f)))))
-		;(println "l: " l " np: " np " difference: " (difference l np))
-		(set 'l (difference l np))))
+(define (prime? n)
+	(and 
+		(= (length (factor n)) 1)))
 
+(set 'primes '())
+(while (< $idx 130000)
+	(if (prime? $idx)
+		(push $idx primes)))
 
-(sieve 130000)
-(println (length result))
-(println ((reverse result) 10000))
+(println (length primes))
+(println ((reverse (copy primes)) 10000))
+
 (exit)
