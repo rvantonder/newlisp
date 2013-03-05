@@ -8,11 +8,10 @@
     (set 'prev current)
     (set 'current (pop s))
     (if (= prev current)
-      (inc (temp 1)))
-    (if (!= prev current)
-      (push temp result -1))
-    (if (!= prev current)
-      (set 'temp (list current 1))))
+      (inc (temp 1))
+      (begin ; else
+        (push temp result -1)
+        (set 'temp (list current 1)))))
     ;(println "prev " prev " current " current " temp " temp))
   (push temp result -1))
   
