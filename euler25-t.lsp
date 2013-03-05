@@ -1,0 +1,11 @@
+(define (fib-dig n)
+	(let (a 2 b 1 ans 0)
+		(until (> (length (string b)) 1000)
+			(if (= 0 (mod a 2))
+				(inc ans a))
+			(inc b a)
+			(swap a b))
+		(println ans)))
+			
+(fib-dig)
+(exit)
