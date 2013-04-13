@@ -4,5 +4,5 @@
 		(if (and 
 				(= (add a b c) 1000)
 				(< a b c))
-					 (println a " " b " " c " " (* a b c)))))
+					 (println a b c (* a b c)))))
 (exit)
